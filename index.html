@@ -16,9 +16,10 @@ body {
     color: #111;
 }
 
+/* HERO */
 .hero {
     height: 100vh;
-    background: url('PASTE_YOUR_MAIN_IMAGE') center/cover no-repeat;
+    background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('PASTE_YOUR_MAIN_IMAGE') center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -36,9 +37,16 @@ body {
 .hero p {
     font-size: 1.3rem;
     max-width: 600px;
-    margin: 20px auto;
+    margin: 15px auto;
 }
 
+.author-line {
+    font-size: 0.95rem;
+    margin-top: 15px;
+    opacity: 0.9;
+}
+
+/* SECTION */
 .section {
     max-width: 900px;
     margin: auto;
@@ -51,6 +59,7 @@ h2 {
     margin-bottom: 20px;
 }
 
+/* GRID */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -64,13 +73,41 @@ h2 {
     object-fit: cover;
 }
 
-.quote {
-    font-size: 1.6rem;
-    font-style: italic;
-    text-align: center;
-    margin: 60px 0;
+.caption {
+    font-size: 0.9rem;
+    margin-top: 5px;
+    color: #555;
 }
 
+/* QUOTE */
+.quote {
+    font-size: 1.5rem;
+    font-style: italic;
+    text-align: center;
+    margin: 40px 0;
+}
+
+/* BUTTONS */
+.buttons {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.buttons a {
+    text-decoration: none;
+    padding: 12px 20px;
+    margin: 5px;
+    border: 1px solid black;
+    display: inline-block;
+    color: black;
+}
+
+.buttons a:hover {
+    background: black;
+    color: white;
+}
+
+/* FOOTER */
 .footer {
     background: #111;
     color: white;
@@ -86,48 +123,92 @@ h2 {
     <div>
         <h1>The Urban Way</h1>
         <p>How culture moves through cities—and reshapes everyday life</p>
+        <p>A new book on global urban culture</p>
+        <div class="author-line">
+            By J.W., sociologist of cities, culture, and globalization
+        </div>
     </div>
 </section>
 
 <section class="section">
     <h2>About the Book</h2>
     <p>
-        Cities are not just places—they are pathways. <em>The Urban Way</em> explores how culture travels through urban life: through food, music, migration, and neighborhood change. Across global cities, everyday spaces become sites where ideas, identities, and traditions are constantly exchanged and transformed.
+        Cities are not just places—they are pathways.
     </p>
-
     <p>
-        Blending sociology, storytelling, and on-the-ground observation, the book offers a new way of seeing the city—not as a fixed location, but as a dynamic process shaped by movement.
+        <em>The Urban Way</em> explores how culture moves through urban life: through food, music, migration, and neighborhood change. Across global cities, everyday spaces become sites where ideas, identities, and traditions are constantly exchanged and transformed.
     </p>
+    <p>
+        Blending sociology and storytelling, the book offers a new way of seeing the city—not as a fixed location, but as a dynamic process shaped by movement.
+    </p>
+    <p><strong>Coming 2027</strong></p>
 </section>
 
 <section class="section">
     <h2>Scenes from the Urban Way</h2>
 
     <div class="grid">
-        <img src="https://images.unsplash.com/photo-1519056894482-50b7093ce330?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
-        <img src="https://images.unsplash.com/photo-1657104709136-5743a9fba980?q=80&w=1036&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
-        <img src="https://images.unsplash.com/photo-1522850621283-87a52b7d00e4?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
-        <img src="https://images.unsplash.com/photo-1590157867535-b8435e08a93f?q=80&w=1384&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
-        <img src="https://images.unsplash.com/photo-1625028184979-f0974bdabd2c?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
-        <img src="https://images.unsplash.com/photo-1471347219181-ea568f4ef9a3?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
-
+        <div>
+            <img src="PASTE_IMAGE_1">
+            <div class="caption">Street food as cultural exchange</div>
+        </div>
+        <div>
+            <img src="PASTE_IMAGE_2">
+            <div class="caption">Migration made visible</div>
+        </div>
+        <div>
+            <img src="PASTE_IMAGE_3">
+            <div class="caption">Everyday globalization</div>
+        </div>
+        <div>
+            <img src="PASTE_IMAGE_4">
+            <div class="caption">Neighborhoods in transition</div>
+        </div>
     </div>
 </section>
 
 <section class="section">
+    <h2>Advance Praise</h2>
+
     <div class="quote">
-        “A new way to understand how cities shape culture—and how culture reshapes cities.”
+        “A powerful and original account of how culture moves through cities.”
+    </div>
+
+    <div class="quote">
+        “A compelling new framework for understanding global urban life.”
+    </div>
+
+    <div class="quote">
+        “Brilliant, observant, and deeply relevant.”
+    </div>
+
+</section>
+
+<section class="section">
+    <h2>Preorder</h2>
+
+    <p style="text-align:center;">
+        Available soon from major retailers and independent bookstores.
+    </p>
+
+    <div class="buttons">
+        <a href="#">Amazon</a>
+        <a href="#">Bookshop.org</a>
+        <a href="#">Barnes & Noble</a>
     </div>
 </section>
 
 <section class="section">
     <h2>About the Authors</h2>
     <p>
-        J.W. and A.D. are sociologists specializing in cities and culture. Their work examines how urban spaces shape identity, creativity, and social life.
-    </p>
+        J.W. and A.D. are sociologists specializing in cities and culture. Their work examines how urban spaces shape identity, creativity, and social life.    </p>
 
     <p>
         He is the author of <em>The Set Up</em>, a critically engaged thriller, and teaches courses on urban sociology, media, and politics.
+    </p>
+
+    <p>
+        <em>The Urban Way</em> reflects his ongoing interest in how culture moves—and how cities make that movement visible.
     </p>
 </section>
 
@@ -149,3 +230,4 @@ h2 {
 
 </body>
 </html>
+
