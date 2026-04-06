@@ -6,13 +6,12 @@
 
 <title>The Urban Way</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 body {
     margin: 0;
     font-family: 'Inter', sans-serif;
-    line-height: 1.6;
     background: #0f172a;
     color: #e5e7eb;
 }
@@ -26,11 +25,10 @@ body {
     justify-content: center;
     text-align: center;
     color: white;
-    padding: 20px;
 }
 
 .hero h1 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Space Grotesk', sans-serif;
     font-size: 3.5rem;
 }
 
@@ -42,7 +40,7 @@ body {
 
 .author-line {
     font-size: 0.95rem;
-    opacity: 0.9;
+    opacity: 0.85;
 }
 
 /* SECTION */
@@ -56,9 +54,8 @@ body {
     background: #111827;
 }
 
-/* HEADINGS */
 h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Space Grotesk', sans-serif;
     color: #f59e0b;
 }
 
@@ -118,10 +115,11 @@ h2 {
 .city-display, .keyword-display {
     border-top: 1px solid #334155;
     padding-top: 20px;
-    min-height: 140px;
+    min-height: 160px;
+    line-height: 1.6;
 }
 
-/* QUOTE */
+/* QUOTES */
 .quote {
     font-style: italic;
     text-align: center;
@@ -153,7 +151,12 @@ h2 {
 <section class="section">
     <h2>About the Book</h2>
     <p>Cities are not just places—they are assemblages.</p>
-    <p><em>The Urban Way</em> explores how culture moves through urban life...</p>
+    <p>
+        <em>The Urban Way</em> explores how culture moves through urban life: through food, music, migration, and neighborhood change. Across global cities, everyday spaces become sites where ideas, identities, and traditions are constantly exchanged and transformed.
+    </p>
+    <p>
+        Blending sociology and storytelling, the book offers a new way of seeing the city—not as a fixed location, but as a dynamic process shaped by movement.
+    </p>
     <p><strong>Coming 2027</strong></p>
 </section>
 
@@ -194,33 +197,71 @@ h2 {
     </div>
 </section>
 
+<section class="section">
+    <h2>Scenes from the Urban Way</h2>
+
+    <div class="grid">
+        <div>
+            <img src="https://images.unsplash.com/photo-1471347219181-ea568f4ef9a3?q=80&w=987&auto=format&fit=crop">
+            <div class="caption">Subcultural Infrastructures</div>
+        </div>
+        <div>
+            <img src="https://images.unsplash.com/photo-1680699641125-5aeac45fe296?q=80&w=1065&auto=format&fit=crop">
+            <div class="caption">Cities as Layers</div>
+        </div>
+        <div>
+            <img src="https://images.unsplash.com/photo-1590157867535-b8435e08a93f?w=900&auto=format&fit=crop&q=60">
+            <div class="caption">Informality as Theme</div>
+        </div>
+        <div>
+            <img src="https://images.unsplash.com/photo-1759802339352-3ae7fedc2c8e?q=80&w=1673&auto=format&fit=crop">
+            <div class="caption">Scenes as Bricolage</div>
+        </div>
+        <div>
+            <img src="https://images.unsplash.com/photo-1525994886773-080587e161c2?q=80&w=2068&auto=format&fit=crop">
+            <div class="caption">Improvisational Cultures</div>
+        </div>
+        <div>
+            <img src="https://images.unsplash.com/photo-1601139677475-b21baf4657dc?q=80&w=3267&auto=format&fit=crop">
+            <div class="caption">Cathedrals of Connection</div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <h2>Contact</h2>
+    <p>Email: your@email.com</p>
+</section>
+
+<div class="footer">
+    © 2026 The Urban Way
+</div>
+
 <script>
 function showCity(city) {
     const content = {
-        seoul: "<strong>Seoul</strong><br>In Seoul, global culture moves at street level...",
-        newyork: "<strong>New York</strong><br>Migration continually reshapes urban life...",
-        istanbul: "<strong>Istanbul</strong><br>A crossroads of continents...",
-        mexicocity: "<strong>Mexico City</strong><br>Dense improvisational creativity...",
-        lagos: "<strong>Lagos</strong><br>Rapid urban dynamism...",
-        sanjuan: "<strong>San Juan</strong><br>Colonial histories and diaspora flows intersect...",
-        tokyo: "<strong>Tokyo</strong><br>Hyper-modern life meets deep tradition...",
-        losangeles: "<strong>Los Angeles</strong><br>A global cultural engine...",
-        hongkong: "<strong>Hong Kong</strong><br>Dense cultural negotiation...",
-        buenosaires: "<strong>Buenos Aires</strong><br>Identity performed through urban life..."
+        seoul: "<strong>Seoul</strong><br>In Seoul, global culture moves at street level—through food markets, media flows, and hyper-modern neighborhoods layered over deep historical forms.",
+        newyork: "<strong>New York</strong><br>New York reveals how migration continually reshapes urban life, producing neighborhoods where global identities are negotiated in everyday encounters.",
+        istanbul: "<strong>Istanbul</strong><br>Istanbul sits at the crossroads of continents, where cultural exchange is not new but foundational.",
+        mexicocity: "<strong>Mexico City</strong><br>Dense improvisational urban creativity.",
+        lagos: "<strong>Lagos</strong><br>Rapid urban dynamism and informal systems.",
+        sanjuan: "<strong>San Juan</strong><br>Colonial histories and diaspora flows intersect.",
+        tokyo: "<strong>Tokyo</strong><br>Hyper-modern life meets deep tradition.",
+        losangeles: "<strong>Los Angeles</strong><br>A global cultural engine.",
+        hongkong: "<strong>Hong Kong</strong><br>Dense cultural negotiation.",
+        buenosaires: "<strong>Buenos Aires</strong><br>Identity performed through urban life."
     };
-
     document.getElementById("cityDisplay").innerHTML = content[city];
 }
 
 function showKeyword(k) {
     const content = {
-        division: "<strong>Division Paradox</strong><br>Cities are simultaneously built on power struggles to spatially divide populations...<br><br>...and yet these divisions have also served as creative engines of cultural production and innovation.",
-        identity: "<strong>Identity Waystations</strong><br>Places characterized by dense interactional networks, high turnover, and experimentation with identity and style.",
-        terroir: "<strong>Urban Cultural Terroir</strong><br>The locally embedded ordinary culture that gives places their distinctive meaning.",
-        reification: "<strong>Reification Machine</strong><br>Processes that attempt to freeze culture in motion into fixed forms.",
-        infrastructure: "<strong>Subcultural Infrastructure</strong><br>Networks of venues and spaces that sustain subcultural scenes over time."
+        division: `<strong>Division Paradox</strong><br>Cities are simultaneously built on power struggles to spatially divide populations and categorize groups by race, class, ethnicity, labor, and more, and yet these divisions have also served as creative engines of cultural production and innovation.`,
+        identity: `<strong>Identity Waystations</strong><br>Places in cities characterized by dense interactional networks with high turnover, fluid cultural cross-sections, and affordable accommodations, where people (predominantly but not exclusively youths) engage in low-stakes experimentation around taste, style, self presentation, and creative pursuits, before transitioning to more conventional lifestyles.`,
+        terroir: `<strong>Urban Cultural Terroir</strong><br>The locally embedded “ordinary culture” (i.e., specific practices, spatial design, material resources, and collective narratives) that give the cultural production in a specific place its distinctive texture and meaning.`,
+        reification: `<strong>Reification Machine</strong><br>Political and economic power, often through the filter of urban planning and spatial design, through which people attempt to freeze the subjective, aesthetic, material, and technological trends of the moment—the urban culture in motion—into objectified social and spatial divisions and connections, cultural scenes, and commercialized and packaged themes.`,
+        infrastructure: `<strong>Subcultural Infrastructure</strong><br>The network of venues, businesses, informal gathering sites, and street-level cultural intermediaries that anchor and coordinate a subcultural scene. These nodes facilitate interaction, circulate information, and provide material and semi-organizational resources that allow participants to find one another, collaborate, and reproduce shared practices over time.`
     };
-
     document.getElementById("keywordDisplay").innerHTML = content[k];
 }
 </script>
