@@ -26,8 +26,7 @@ body \{\
 /* HERO */\
 .hero \{\
     height: 100vh;\
-    background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),\
-    url('https://images.unsplash.com/photo-1508057198894-247b23fe5ade?w=1600&auto=format&fit=crop&q=60') center/cover no-repeat;\
+    background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('PASTE_YOUR_MAIN_IMAGE') center/cover no-repeat;\
     display: flex;\
     align-items: center;\
     justify-content: center;\
@@ -43,14 +42,14 @@ body \{\
 \}\
 \
 .hero p \{\
-    font-size: 1.2rem;\
+    font-size: 1.3rem;\
     max-width: 600px;\
-    margin: 10px auto;\
+    margin: 15px auto;\
 \}\
 \
 .author-line \{\
     font-size: 0.95rem;\
-    margin-top: 10px;\
+    margin-top: 15px;\
     opacity: 0.9;\
 \}\
 \
@@ -58,7 +57,7 @@ body \{\
 .section \{\
     max-width: 900px;\
     margin: auto;\
-    padding: 70px 20px;\
+    padding: 80px 20px;\
 \}\
 \
 h2 \{\
@@ -67,12 +66,60 @@ h2 \{\
     margin-bottom: 20px;\
 \}\
 \
-/* CITY BUTTONS */\
+/* GRID */\
+.grid \{\
+    display: grid;\
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));\
+    gap: 12px;\
+    margin-top: 20px;\
+\}\
+\
+.grid img \{\
+    width: 100%;\
+    height: 260px;\
+    object-fit: cover;\
+\}\
+\
+.caption \{\
+    font-size: 0.9rem;\
+    margin-top: 5px;\
+    color: #555;\
+\}\
+\
+/* QUOTE */\
+.quote \{\
+    font-size: 1.5rem;\
+    font-style: italic;\
+    text-align: center;\
+    margin: 40px 0;\
+\}\
+\
+/* BUTTONS */\
+.buttons \{\
+    text-align: center;\
+    margin-top: 30px;\
+\}\
+\
+.buttons a \{\
+    text-decoration: none;\
+    padding: 12px 20px;\
+    margin: 5px;\
+    border: 1px solid black;\
+    display: inline-block;\
+    color: black;\
+\}\
+\
+.buttons a:hover \{\
+    background: black;\
+    color: white;\
+\}\
+\
+/* CITIES */\
 .cities-list \{\
     display: flex;\
     flex-wrap: wrap;\
-    justify-content: center;\
     gap: 10px;\
+    margin-bottom: 20px;\
 \}\
 \
 .city-btn \{\
@@ -80,53 +127,17 @@ h2 \{\
     border: 1px solid #111;\
     cursor: pointer;\
     font-size: 0.9rem;\
-    transition: all 0.2s ease;\
 \}\
 \
 .city-btn:hover \{\
     background: #111;\
     color: white;\
-    transform: translateY(-2px);\
 \}\
 \
-/* IMAGE GRID */\
-.grid \{\
-    display: grid;\
-    grid-template-columns: repeat(2, 1fr);\
-    gap: 14px;\
-\}\
-\
-.image-container \{\
-    position: relative;\
-\}\
-\
-.image-container img \{\
-    width: 100%;\
-    height: 260px;\
-    object-fit: cover;\
-    display: block;\
-\}\
-\
-.overlay \{\
-    position: absolute;\
-    top: 0;\
-    left: 0;\
-    right: 0;\
-    bottom: 0;\
-    background: rgba(0,0,0,0.6);\
-    color: white;\
-    display: flex;\
-    align-items: center;\
-    justify-content: center;\
-    text-align: center;\
-    opacity: 0;\
-    transition: opacity 0.3s ease;\
-    padding: 10px;\
-    font-size: 1rem;\
-\}\
-\
-.image-container:hover .overlay \{\
-    opacity: 1;\
+.city-display \{\
+    border-top: 1px solid #ddd;\
+    padding-top: 20px;\
+    min-height: 120px;\
 \}\
 \
 /* FOOTER */\
@@ -141,7 +152,6 @@ h2 \{\
 \
 <body>\
 \
-<!-- HERO -->\
 <section class="hero">\
     <div>\
         <h1>The Urban Way</h1>\
@@ -153,71 +163,113 @@ h2 \{\
     </div>\
 </section>\
 \
-<!-- ABOUT -->\
 <section class="section">\
     <h2>About the Book</h2>\
     <p>Cities are not just places\'97they are assemblages.</p>\
     <p>\
-        <em>The Urban Way</em> explores how culture moves through urban life: through food, music, migration, and neighborhood change.\
+        <em>The Urban Way</em> explores how culture moves through urban life: through food, music, migration, and neighborhood change. Across global cities, everyday spaces become sites where ideas, identities, and traditions are constantly exchanged and transformed.\
+    </p>\
+    <p>\
+        Blending sociology and storytelling, the book offers a new way of seeing the city\'97not as a fixed location, but as a dynamic process shaped by movement.\
     </p>\
     <p><strong>Coming 2027</strong></p>\
 </section>\
 \
-<!-- CITIES -->\
+<!-- \uc0\u55356 \u57101  NEW CITIES SECTION -->\
 <section class="section">\
     <h2>Cities Featured in the Book</h2>\
 \
     <div class="cities-list">\
-        <div class="city-btn">Seoul</div>\
-        <div class="city-btn">New York</div>\
-        <div class="city-btn">Istanbul</div>\
-        <div class="city-btn">Mexico City</div>\
-        <div class="city-btn">Lagos</div>\
-        <div class="city-btn">London</div>\
-        <div class="city-btn">Mumbai</div>\
-        <div class="city-btn">Tokyo</div>\
-        <div class="city-btn">Paris</div>\
-        <div class="city-btn">S\'e3o Paulo</div>\
+        <div class="city-btn" onclick="showCity('seoul')">Seoul</div>\
+        <div class="city-btn" onclick="showCity('newyork')">New York</div>\
+        <div class="city-btn" onclick="showCity('istanbul')">Istanbul</div>\
+        <div class="city-btn" onclick="showCity('mexicocity')">Mexico City</div>\
+        <div class="city-btn" onclick="showCity('lagos')">Lagos</div>\
+    </div>\
+\
+    <div class="city-display" id="cityDisplay">\
+        <p>Select a city to explore how culture moves through it.</p>\
     </div>\
 </section>\
 \
-<!-- IMAGES -->\
 <section class="section">\
     <h2>Scenes from the Urban Way</h2>\
 \
     <div class="grid">\
-        <div class="image-container">\
-            <img src="https://images.unsplash.com/photo-1471347219181-ea568f4ef9a3?w=900&auto=format&fit=crop&q=60">\
-            <div class="overlay">Subcultural Infrastructure</div>\
+        <div>\
+            <img src="https://images.unsplash.com/photo-1471347219181-ea568f4ef9a3?q=80&w=987&auto=format&fit=crop">\
+            <div class="caption">Street food as cultural exchange</div>\
         </div>\
-\
-        <div class="image-container">\
-            <img src="https://images.unsplash.com/photo-1680699641125-5aeac45fe296?w=900&auto=format&fit=crop&q=60">\
-            <div class="overlay">Minor Spaces</div>\
+        <div>\
+            <img src="https://images.unsplash.com/photo-1680699641125-5aeac45fe296?q=80&w=1065&auto=format&fit=crop">\
+            <div class="caption">Migration made visible</div>\
         </div>\
-\
-        <div class="image-container">\
+        <div>\
             <img src="https://images.unsplash.com/photo-1590157867535-b8435e08a93f?w=900&auto=format&fit=crop&q=60">\
-            <div class="overlay">Informal to Formal Culture</div>\
+            <div class="caption">Everyday globalization</div>\
         </div>\
-\
-        <div class="image-container">\
+        <div>\
             <img src="https://images.unsplash.com/photo-1471347219181-ea568f4ef9a3?w=900&auto=format&fit=crop&q=60">\
-            <div class="overlay">Cultural Hybrids</div>\
+            <div class="caption">Neighborhoods in transition</div>\
         </div>\
     </div>\
 </section>\
 \
-<!-- CONTACT -->\
+<section class="section">\
+    <h2>Advance Praise</h2>\
+\
+    <div class="quote">\'93A powerful and original account of how culture moves through cities.\'94</div>\
+    <div class="quote">\'93A compelling new framework for understanding global urban life.\'94</div>\
+    <div class="quote">\'93Brilliant, observant, and deeply relevant.\'94</div>\
+</section>\
+\
+<section class="section">\
+    <h2>Preorder</h2>\
+    <p style="text-align:center;">Available soon from major retailers and independent bookstores.</p>\
+\
+    <div class="buttons">\
+        <a href="#">Amazon</a>\
+        <a href="#">Bookshop.org</a>\
+        <a href="#">Barnes & Noble</a>\
+    </div>\
+</section>\
+\
+<section class="section">\
+    <h2>About the Authors</h2>\
+    <p>J.W. and A.D. are sociologists specializing in cities and culture. Their work examines how urban spaces shape identity, creativity, and social life.</p>\
+\
+    <p>He is the author of <em>The Set Up</em>, a critically engaged thriller, and teaches courses on urban sociology, media, and politics.</p>\
+\
+    <p><em>The Urban Way</em> reflects his ongoing interest in how culture moves\'97and how cities make that movement visible.</p>\
+</section>\
+\
+<section class="section">\
+    <h2>Speaking</h2>\
+    <p>Available for talks on global urban culture, migration, and the sociology of cities.</p>\
+</section>\
+\
 <section class="section">\
     <h2>Contact</h2>\
     <p>Email: your@email.com</p>\
 </section>\
 \
-<!-- FOOTER -->\
 <div class="footer">\
     \'a9 2026 The Urban Way\
 </div>\
+\
+<script>\
+function showCity(city) \{\
+    const content = \{\
+        seoul: "<strong>Seoul</strong><br>In Seoul, global culture moves at street level\'97through food markets, media flows, and hyper-modern neighborhoods layered over deep historical forms.",\
+        newyork: "<strong>New York</strong><br>New York reveals how migration continually reshapes urban life, producing neighborhoods where global identities are negotiated in everyday encounters.",\
+        istanbul: "<strong>Istanbul</strong><br>Istanbul sits at the crossroads of continents, where cultural exchange is not new but foundational\'97visible in food, language, and urban space.",\
+        mexicocity: "<strong>Mexico City</strong><br>In Mexico City, global and local cultures intertwine through street life, producing dense, improvisational forms of urban creativity.",\
+        lagos: "<strong>Lagos</strong><br>Lagos demonstrates the dynamism of rapidly growing cities, where informal systems and global connections generate new cultural forms."\
+    \};\
+\
+    document.getElementById("cityDisplay").innerHTML = content[city];\
+\}\
+</script>\
 \
 </body>\
 </html>}
