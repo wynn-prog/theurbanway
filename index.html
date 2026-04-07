@@ -12,30 +12,31 @@
 body {
     margin: 0;
     font-family: 'Inter', sans-serif;
-    line-height: 1.6;
     color: #111;
+    line-height: 1.6;
 }
 
 /* HERO */
 .hero {
     height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
-    url('https://images.unsplash.com/photo-1471347219181-ea568f4ef9a3?w=1600') center/cover no-repeat;
+    background: linear-gradient(135deg, #2f3e46, #1b263b);
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: white;
+    color: #ff7f2a;
     padding: 20px;
 }
 
 .hero h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 3.5rem;
+    font-size: 3.8rem;
     margin: 0;
+    color: #ff7f2a;
 }
 
 .hero p {
+    color: #e0e0e0;
     font-size: 1.3rem;
     max-width: 600px;
     margin: 15px auto;
@@ -43,14 +44,14 @@ body {
 
 /* SECTION */
 .section {
-    max-width: 900px;
+    max-width: 950px;
     margin: auto;
     padding: 80px 20px;
 }
 
 h2 {
     font-family: 'Playfair Display', serif;
-    font-size: 2rem;
+    font-size: 2.2rem;
     margin-bottom: 20px;
 }
 
@@ -64,9 +65,9 @@ h2 {
 
 .button {
     padding: 10px 16px;
-    border: 1px solid #111;
+    border: 1px solid #333;
     cursor: pointer;
-    transition: 0.2s;
+    transition: all 0.2s ease;
 }
 
 .button:hover {
@@ -124,8 +125,8 @@ h2 {
 
 /* FOOTER */
 .footer {
-    background: #111;
-    color: white;
+    background: #1b263b;
+    color: #ff7f2a;
     text-align: center;
     padding: 40px;
 }
@@ -188,7 +189,7 @@ h2 {
         </div>
 
         <div class="image-container">
-            <img src="https://images.unsplash.com/photo-1759802339352-3ae7fedc2c8e?q=80&w=1673&auto=format&fit=crop">
+            <img src="https://images.unsplash.com/photo-1759802339352-3ae7fedc2c8e?w=900&auto=format&fit=crop&q=60">
             <div class="overlay">Urban Themes</div>
         </div>
 
@@ -217,13 +218,13 @@ h2 {
 <script>
 function showConcept(type){
     const text = {
-        divisions: "Social and cultural divisions built into the physical landscape, becoming an entrenched and naturalized part of urban life.",
-        paradox: "Cities are built on divisions, yet those same divisions generate creativity and cultural innovation.",
-        waystations: "Urban sites of experimentation where identities, styles, and creative practices are explored before stabilizing.",
-        improv: "Open-ended collective creation where culture emerges through interaction and improvisation.",
-        infra: "Networks of venues, spaces, and intermediaries that sustain subcultural scenes.",
-        terroir: "Locally embedded practices and meanings that give cultural production its distinctive character.",
-        assemblage: "A way of analyzing cities as dynamic processes of connection, transformation, and recombination."
+        divisions: "Social and cultural divisions built into the physical landscape, becoming an entrenched, seemingly naturalized or implicit part of how people experience cities.",
+        paradox: "Cities are simultaneously built on power struggles to spatially divide populations and categorize groups by race, class, ethnicity, labor, and more, and yet these divisions have also served as creative engines of cultural production and innovation.",
+        waystations: "Places in cities characterized by dense interactional networks with high turnover, fluid cultural cross-sections, and affordable accommodations, where people (predominantly but not exclusively youths) engage in low-stakes experimentation around taste, style, self presentation, and creative pursuits, before transitioning to more conventional lifestyles.",
+        improv: "The spontaneous and open-ended nature of collective creation within scenes, where artists treat music as an open-ended dialogue and styles are often fluid.",
+        infra: "The network of venues, businesses, informal gathering sites, and street-level cultural intermediaries that anchor and coordinate a subcultural scene. These nodes facilitate interaction, circulate information, and provide material and semi-organizational resources that allow participants to find one another, collaborate, and reproduce shared practices over time.",
+        terroir: "The locally embedded “ordinary culture” (i.e., specific practices, spatial design, material resources, and collective narratives) that give the cultural production in a specific place its distinctive texture and meaning.",
+        assemblage: "The practice of critically examining the symbolic and material processes, relations, and infrastructures that compose the urban way, revealing how they are continuously disassembled, reassembled, and held together. It emphasizes the processes underlying urban culture, showing both its fluidity and its variation over time and place."
     };
 
     document.getElementById("conceptDisplay").innerHTML = text[type];
