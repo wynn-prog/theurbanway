@@ -19,13 +19,28 @@ body {
 /* HERO */
 .hero {
     height: 100vh;
-    background: linear-gradient(135deg, #2f3e46, #1b263b);
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: #ff7f2a;
-    padding: 20px;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.5);
+    transition: opacity 1.5s ease-in-out;
+    z-index: -1;
+}
+
+.hero-content {
+    z-index: 2;
 }
 
 .hero h1 {
@@ -51,7 +66,6 @@ body {
 h2 {
     font-family: 'Space Grotesk', sans-serif;
     font-size: 2.2rem;
-    margin-bottom: 20px;
 }
 
 /* BUTTONS */
@@ -66,7 +80,7 @@ h2 {
     padding: 10px 16px;
     border: 1px solid #333;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: 0.2s;
 }
 
 .button:hover {
@@ -75,11 +89,11 @@ h2 {
     transform: translateY(-3px);
 }
 
-/* DISPLAY BOX */
+/* DISPLAY */
 .display-box {
     margin-top: 25px;
-    padding-top: 20px;
     border-top: 1px solid #ddd;
+    padding-top: 20px;
 }
 
 /* GRID */
@@ -101,18 +115,15 @@ h2 {
 
 .overlay {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0;
     background: rgba(0,0,0,0.65);
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
     opacity: 0;
     transition: 0.3s;
+    text-align: center;
     padding: 15px;
 }
 
@@ -122,8 +133,8 @@ h2 {
 
 /* MAP */
 .map {
+    margin-top: 40px;
     text-align: center;
-    margin-top: 30px;
 }
 
 svg {
@@ -131,14 +142,17 @@ svg {
     max-width: 700px;
 }
 
+line {
+    stroke: rgba(255,127,42,0.4);
+    stroke-width: 1.5;
+}
+
 circle {
     fill: #ff7f2a;
     cursor: pointer;
-    transition: 0.2s;
 }
 
 circle:hover {
-    transform: scale(1.4);
     fill: white;
 }
 
@@ -154,8 +168,9 @@ circle:hover {
 
 <body>
 
-<section class="hero">
-    <div>
+<!-- HERO -->
+<section class="hero" id="hero">
+    <div class="hero-content">
         <h1>The Urban Way</h1>
         <p>How culture moves through cities—and reshapes everyday life</p>
     </div>
@@ -164,13 +179,11 @@ circle:hover {
 <section class="section">
     <h2>About the Book</h2>
     <p>Cities are not just places—they are assemblages.</p>
-    <p><em>The Urban Way</em> explores how culture moves through urban life.</p>
 </section>
 
 <!-- KEYWORDS -->
 <section class="section">
     <h2>Key Concepts</h2>
-
     <div class="button-row">
         <div class="button" onclick="showConcept('divisions')">Second-Nature Divisions</div>
         <div class="button" onclick="showConcept('paradox')">Division Paradox</div>
@@ -180,48 +193,19 @@ circle:hover {
         <div class="button" onclick="showConcept('terroir')">Urban Cultural Terroir</div>
         <div class="button" onclick="showConcept('assemblage')">Assemblage Analysis</div>
     </div>
-
-    <div id="conceptDisplay" class="display-box">
-        Click a concept to explore.
-    </div>
+    <div id="conceptDisplay" class="display-box">Click a concept.</div>
 </section>
 
 <!-- IMAGES -->
 <section class="section">
     <h2>Scenes from the Urban Way</h2>
-
     <div class="grid">
-
-        <div class="image-container">
-            <img src="https://images.unsplash.com/photo-1522850621283-87a52b7d00e4?w=900&auto=format&fit=crop&q=60">
-            <div class="overlay">Minor Spaces</div>
-        </div>
-
-        <div class="image-container">
-            <img src="https://images.unsplash.com/photo-1590157867535-b8435e08a93f?w=900&auto=format&fit=crop&q=60">
-            <div class="overlay">Informal to Formal Culture</div>
-        </div>
-
-        <div class="image-container">
-            <img src="https://images.unsplash.com/photo-1525994886773-080587e161c2?w=900&auto=format&fit=crop&q=60">
-            <div class="overlay">Urban Culture Terroir</div>
-        </div>
-
-        <div class="image-container">
-            <img src="https://images.unsplash.com/photo-1759802339352-3ae7fedc2c8e?w=900&auto=format&fit=crop&q=60">
-            <div class="overlay">Urban Themes</div>
-        </div>
-
-        <div class="image-container">
-            <img src="https://images.unsplash.com/photo-1657104709136-5743a9fba980?w=900&auto=format&fit=crop&q=60">
-            <div class="overlay">Spaces of Connection</div>
-        </div>
-
-        <div class="image-container">
-            <img src="https://images.unsplash.com/photo-1471347219181-ea568f4ef9a3?w=900&auto=format&fit=crop&q=60">
-            <div class="overlay">Subcultural Infrastructure</div>
-        </div>
-
+        <div class="image-container"><img src="https://images.unsplash.com/photo-1522850621283-87a52b7d00e4?w=900"><div class="overlay">Minor Spaces</div></div>
+        <div class="image-container"><img src="https://images.unsplash.com/photo-1590157867535-b8435e08a93f?w=900"><div class="overlay">Informal to Formal Culture</div></div>
+        <div class="image-container"><img src="https://images.unsplash.com/photo-1525994886773-080587e161c2?w=900"><div class="overlay">Urban Culture Terroir</div></div>
+        <div class="image-container"><img src="https://images.unsplash.com/photo-1759802339352-3ae7fedc2c8e?w=900"><div class="overlay">Urban Themes</div></div>
+        <div class="image-container"><img src="https://images.unsplash.com/photo-1657104709136-5743a9fba980?w=900"><div class="overlay">Spaces of Connection</div></div>
+        <div class="image-container"><img src="https://images.unsplash.com/photo-1471347219181-ea568f4ef9a3?w=900"><div class="overlay">Subcultural Infrastructure</div></div>
     </div>
 </section>
 
@@ -232,64 +216,55 @@ circle:hover {
     <div class="map">
         <svg viewBox="0 0 800 400">
 
-            <circle cx="650" cy="180" r="6" onclick="showCity('tokyo')" />
+            <!-- connection lines -->
+            <line x1="600" y1="170" x2="400" y2="190" />
+            <line x1="400" y1="190" x2="250" y2="160" />
+            <line x1="250" y1="160" x2="180" y2="200" />
+            <line x1="180" y1="200" x2="160" y2="260" />
+            <line x1="400" y1="190" x2="420" y2="260" />
+
+            <!-- nodes -->
             <circle cx="600" cy="170" r="6" onclick="showCity('seoul')" />
             <circle cx="400" cy="190" r="6" onclick="showCity('istanbul')" />
             <circle cx="250" cy="160" r="6" onclick="showCity('london')" />
-            <circle cx="220" cy="150" r="6" onclick="showCity('paris')" />
             <circle cx="180" cy="200" r="6" onclick="showCity('newyork')" />
             <circle cx="160" cy="260" r="6" onclick="showCity('mexico')" />
             <circle cx="420" cy="260" r="6" onclick="showCity('lagos')" />
-            <circle cx="500" cy="280" r="6" onclick="showCity('mumbai')" />
-            <circle cx="300" cy="300" r="6" onclick="showCity('saopaulo')" />
 
         </svg>
     </div>
 
-    <div id="cityDisplay" class="display-box">
-        Click a city to explore.
-    </div>
+    <div id="cityDisplay" class="display-box">Click a city.</div>
 </section>
 
-<section class="section">
-    <h2>Contact</h2>
-    <p>Email: your@email.com</p>
-</section>
-
-<div class="footer">
-    © 2026 The Urban Way
-</div>
+<div class="footer">© 2026 The Urban Way</div>
 
 <script>
-function showConcept(type){
-    const text = {
-        divisions: "Social and cultural divisions built into the physical landscape, becoming an entrenched, seemingly naturalized or implicit part of how people experience cities.",
-        paradox: "Cities are simultaneously built on power struggles to spatially divide populations and categorize groups by race, class, ethnicity, labor, and more, and yet these divisions have also served as creative engines of cultural production and innovation.",
-        waystations: "Places in cities characterized by dense interactional networks with high turnover, fluid cultural cross-sections, and affordable accommodations, where people (predominantly but not exclusively youths) engage in low-stakes experimentation around taste, style, self presentation, and creative pursuits, before transitioning to more conventional lifestyles.",
-        improv: "The spontaneous and open-ended nature of collective creation within scenes, where artists treat music as an open-ended dialogue and styles are often fluid.",
-        infra: "The network of venues, businesses, informal gathering sites, and street-level cultural intermediaries that anchor and coordinate a subcultural scene. These nodes facilitate interaction, circulate information, and provide material and semi-organizational resources that allow participants to find one another, collaborate, and reproduce shared practices over time.",
-        terroir: "The locally embedded “ordinary culture” (i.e., specific practices, spatial design, material resources, and collective narratives) that give the cultural production in a specific place its distinctive texture and meaning.",
-        assemblage: "The practice of critically examining the symbolic and material processes, relations, and infrastructures that compose the urban way, revealing how they are continuously disassembled, reassembled, and held together. It emphasizes the processes underlying urban culture, showing both its fluidity and its variation over time and place."
-    };
+/* HERO ROTATION */
+const images = [
+'https://images.unsplash.com/photo-1471347219181-ea568f4ef9a3?w=1600',
+'https://images.unsplash.com/photo-1522850621283-87a52b7d00e4?w=1600',
+'https://images.unsplash.com/photo-1525994886773-080587e161c2?w=1600'
+];
 
-    document.getElementById("conceptDisplay").innerHTML = text[type];
+let i = 0;
+const hero = document.querySelector('.hero');
+
+function changeBackground(){
+    hero.style.backgroundImage = `url(${images[i]})`;
+    i = (i + 1) % images.length;
+}
+changeBackground();
+setInterval(changeBackground, 5000);
+
+/* CONCEPT TEXT */
+function showConcept(type){
+    document.getElementById("conceptDisplay").innerHTML = type;
 }
 
+/* CITY TEXT */
 function showCity(city){
-    const cities = {
-        seoul: "Seoul: A dense site of rapid urban transformation and cultural circulation.",
-        newyork: "New York: A historic engine of migration, inequality, and cultural production.",
-        istanbul: "Istanbul: A crossroads of empire, religion, and contemporary urban life.",
-        mexico: "Mexico City: Informality, resilience, and layered urban histories.",
-        lagos: "Lagos: A fast-growing megacity defined by improvisation and energy.",
-        london: "London: Global finance, empire, and multicultural life.",
-        mumbai: "Mumbai: Density, inequality, and cultural vibrancy in tension.",
-        tokyo: "Tokyo: Precision, subculture, and spatial innovation.",
-        paris: "Paris: Culture, class, and symbolic urban identity.",
-        saopaulo: "São Paulo: Vast scale and dynamic cultural hybridization."
-    };
-
-    document.getElementById("cityDisplay").innerHTML = cities[city];
+    document.getElementById("cityDisplay").innerHTML = city;
 }
 </script>
 
