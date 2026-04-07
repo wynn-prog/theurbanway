@@ -6,7 +6,7 @@
 
 <title>The Urban Way</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 body {
@@ -29,10 +29,9 @@ body {
 }
 
 .hero h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 3.8rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 4rem;
     margin: 0;
-    color: #ff7f2a;
 }
 
 .hero p {
@@ -50,7 +49,7 @@ body {
 }
 
 h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Space Grotesk', sans-serif;
     font-size: 2.2rem;
     margin-bottom: 20px;
 }
@@ -81,7 +80,6 @@ h2 {
     margin-top: 25px;
     padding-top: 20px;
     border-top: 1px solid #ddd;
-    font-size: 1rem;
 }
 
 /* GRID */
@@ -116,11 +114,32 @@ h2 {
     opacity: 0;
     transition: 0.3s;
     padding: 15px;
-    font-size: 1.1rem;
 }
 
 .image-container:hover .overlay {
     opacity: 1;
+}
+
+/* MAP */
+.map {
+    text-align: center;
+    margin-top: 30px;
+}
+
+svg {
+    width: 100%;
+    max-width: 700px;
+}
+
+circle {
+    fill: #ff7f2a;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+circle:hover {
+    transform: scale(1.4);
+    fill: white;
 }
 
 /* FOOTER */
@@ -145,7 +164,7 @@ h2 {
 <section class="section">
     <h2>About the Book</h2>
     <p>Cities are not just places—they are assemblages.</p>
-    <p><em>The Urban Way</em> explores how culture moves through urban life through food, music, migration, and everyday space.</p>
+    <p><em>The Urban Way</em> explores how culture moves through urban life.</p>
 </section>
 
 <!-- KEYWORDS -->
@@ -206,6 +225,32 @@ h2 {
     </div>
 </section>
 
+<!-- MAP -->
+<section class="section">
+    <h2>Global Urban Network</h2>
+
+    <div class="map">
+        <svg viewBox="0 0 800 400">
+
+            <circle cx="650" cy="180" r="6" onclick="showCity('tokyo')" />
+            <circle cx="600" cy="170" r="6" onclick="showCity('seoul')" />
+            <circle cx="400" cy="190" r="6" onclick="showCity('istanbul')" />
+            <circle cx="250" cy="160" r="6" onclick="showCity('london')" />
+            <circle cx="220" cy="150" r="6" onclick="showCity('paris')" />
+            <circle cx="180" cy="200" r="6" onclick="showCity('newyork')" />
+            <circle cx="160" cy="260" r="6" onclick="showCity('mexico')" />
+            <circle cx="420" cy="260" r="6" onclick="showCity('lagos')" />
+            <circle cx="500" cy="280" r="6" onclick="showCity('mumbai')" />
+            <circle cx="300" cy="300" r="6" onclick="showCity('saopaulo')" />
+
+        </svg>
+    </div>
+
+    <div id="cityDisplay" class="display-box">
+        Click a city to explore.
+    </div>
+</section>
+
 <section class="section">
     <h2>Contact</h2>
     <p>Email: your@email.com</p>
@@ -228,6 +273,23 @@ function showConcept(type){
     };
 
     document.getElementById("conceptDisplay").innerHTML = text[type];
+}
+
+function showCity(city){
+    const cities = {
+        seoul: "Seoul: A dense site of rapid urban transformation and cultural circulation.",
+        newyork: "New York: A historic engine of migration, inequality, and cultural production.",
+        istanbul: "Istanbul: A crossroads of empire, religion, and contemporary urban life.",
+        mexico: "Mexico City: Informality, resilience, and layered urban histories.",
+        lagos: "Lagos: A fast-growing megacity defined by improvisation and energy.",
+        london: "London: Global finance, empire, and multicultural life.",
+        mumbai: "Mumbai: Density, inequality, and cultural vibrancy in tension.",
+        tokyo: "Tokyo: Precision, subculture, and spatial innovation.",
+        paris: "Paris: Culture, class, and symbolic urban identity.",
+        saopaulo: "São Paulo: Vast scale and dynamic cultural hybridization."
+    };
+
+    document.getElementById("cityDisplay").innerHTML = cities[city];
 }
 </script>
 
