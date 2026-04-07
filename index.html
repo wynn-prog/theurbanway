@@ -12,20 +12,21 @@
 body {
     margin: 0;
     font-family: 'Inter', sans-serif;
+    line-height: 1.6;
     color: #111;
 }
 
 /* HERO */
 .hero {
     height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+    url('https://images.unsplash.com/photo-1471347219181-ea568f4ef9a3?w=1600') center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: white;
-    background-size: cover;
-    background-position: center;
-    transition: background-image 1s ease-in-out;
+    padding: 20px;
 }
 
 .hero h1 {
@@ -35,8 +36,9 @@ body {
 }
 
 .hero p {
+    font-size: 1.3rem;
     max-width: 600px;
-    margin: 10px auto;
+    margin: 15px auto;
 }
 
 /* SECTION */
@@ -48,6 +50,7 @@ body {
 
 h2 {
     font-family: 'Playfair Display', serif;
+    font-size: 2rem;
     margin-bottom: 20px;
 }
 
@@ -60,10 +63,10 @@ h2 {
 }
 
 .button {
-    padding: 8px 14px;
+    padding: 10px 16px;
     border: 1px solid #111;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: 0.2s;
 }
 
 .button:hover {
@@ -72,11 +75,19 @@ h2 {
     transform: translateY(-3px);
 }
 
-/* IMAGE GRID */
+/* DISPLAY BOX */
+.display-box {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+    font-size: 1rem;
+}
+
+/* GRID */
 .grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
+    gap: 14px;
 }
 
 .image-container {
@@ -85,7 +96,7 @@ h2 {
 
 .image-container img {
     width: 100%;
-    height: 220px;
+    height: 260px;
     object-fit: cover;
 }
 
@@ -95,7 +106,7 @@ h2 {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0,0,0,0.6);
+    background: rgba(0,0,0,0.65);
     color: white;
     display: flex;
     align-items: center;
@@ -103,39 +114,12 @@ h2 {
     text-align: center;
     opacity: 0;
     transition: 0.3s;
-    padding: 10px;
+    padding: 15px;
+    font-size: 1.1rem;
 }
 
 .image-container:hover .overlay {
     opacity: 1;
-}
-
-/* DISPLAY BOX */
-.display-box {
-    margin-top: 20px;
-    padding-top: 20px;
-    border-top: 1px solid #ddd;
-    min-height: 100px;
-}
-
-/* MAP */
-.map {
-    text-align: center;
-    margin-top: 40px;
-}
-
-svg {
-    width: 100%;
-    max-width: 600px;
-}
-
-circle {
-    fill: #111;
-    cursor: pointer;
-}
-
-circle:hover {
-    transform: scale(1.3);
 }
 
 /* FOOTER */
@@ -150,51 +134,36 @@ circle:hover {
 
 <body>
 
-<!-- HERO -->
-<section class="hero" id="hero">
+<section class="hero">
     <div>
         <h1>The Urban Way</h1>
         <p>How culture moves through cities—and reshapes everyday life</p>
     </div>
 </section>
 
-<!-- ABOUT -->
 <section class="section">
     <h2>About the Book</h2>
     <p>Cities are not just places—they are assemblages.</p>
-    <p><em>The Urban Way</em> explores how culture moves through urban life.</p>
+    <p><em>The Urban Way</em> explores how culture moves through urban life through food, music, migration, and everyday space.</p>
 </section>
 
 <!-- KEYWORDS -->
 <section class="section">
     <h2>Key Concepts</h2>
-    <div class="button-row">
-        <div class="button" onclick="showConcept('subcultural infrastructure')">Subcultural Infrastructure</div>
-        <div class="button" onclick="showConcept('minor spaces')">Minor Spaces</div>
-        <div class="button" onclick="showConcept('informal to formal culture')">Informal → Formal</div>
-        <div class="button" onclick="showConcept('cultural hybrids')">Cultural Hybrids</div>
-        <div class="button" onclick="showConcept('urban culture terroir')">Urban Terroir</div>
-        <div class="button" onclick="showConcept('cathedrals of connection')">Cathedrals</div>
-    </div>
-    <div id="conceptDisplay" class="display-box">Click a concept to explore.</div>
-</section>
 
-<!-- CITIES -->
-<section class="section">
-    <h2>Cities Featured</h2>
     <div class="button-row">
-        <div class="button" onclick="showCity('seoul')">Seoul</div>
-        <div class="button" onclick="showCity('newyork')">New York</div>
-        <div class="button" onclick="showCity('istanbul')">Istanbul</div>
-        <div class="button" onclick="showCity('mexico')">Mexico City</div>
-        <div class="button" onclick="showCity('lagos')">Lagos</div>
-        <div class="button" onclick="showCity('london')">London</div>
-        <div class="button" onclick="showCity('mumbai')">Mumbai</div>
-        <div class="button" onclick="showCity('tokyo')">Tokyo</div>
-        <div class="button" onclick="showCity('paris')">Paris</div>
-        <div class="button" onclick="showCity('saopaulo')">São Paulo</div>
+        <div class="button" onclick="showConcept('divisions')">Second-Nature Divisions</div>
+        <div class="button" onclick="showConcept('paradox')">Division Paradox</div>
+        <div class="button" onclick="showConcept('waystations')">Identity Waystations</div>
+        <div class="button" onclick="showConcept('improv')">Improvisational Cultures</div>
+        <div class="button" onclick="showConcept('infra')">Subcultural Infrastructure</div>
+        <div class="button" onclick="showConcept('terroir')">Urban Cultural Terroir</div>
+        <div class="button" onclick="showConcept('assemblage')">Assemblage Analysis</div>
     </div>
-    <div id="cityDisplay" class="display-box">Click a city to explore.</div>
+
+    <div id="conceptDisplay" class="display-box">
+        Click a concept to explore.
+    </div>
 </section>
 
 <!-- IMAGES -->
@@ -202,48 +171,43 @@ circle:hover {
     <h2>Scenes from the Urban Way</h2>
 
     <div class="grid">
+
         <div class="image-container">
-            <img src="https://images.unsplash.com/photo-1471347219181-ea568f4ef9a3?w=900&auto=format&fit=crop&q=60">
-            <div class="overlay">Subcultural Infrastructure</div>
-        </div>
-        <div class="image-container">
-            <img src="https://images.unsplash.com/photo-1680699641125-5aeac45fe296?w=900&auto=format&fit=crop&q=60">
+            <img src="https://images.unsplash.com/photo-1522850621283-87a52b7d00e4?w=900&auto=format&fit=crop&q=60">
             <div class="overlay">Minor Spaces</div>
         </div>
+
         <div class="image-container">
             <img src="https://images.unsplash.com/photo-1590157867535-b8435e08a93f?w=900&auto=format&fit=crop&q=60">
             <div class="overlay">Informal to Formal Culture</div>
         </div>
+
         <div class="image-container">
-            <img src="https://images.unsplash.com/photo-1471347219181-ea568f4ef9a3?w=900&auto=format&fit=crop&q=60">
-            <div class="overlay">Cultural Hybrids</div>
-        </div>
-        <div class="image-container">
-            <img src="https://images.unsplash.com/photo-1590157867535-b8435e08a93f?w=900&auto=format&fit=crop&q=60">
+            <img src="https://images.unsplash.com/photo-1525994886773-080587e161c2?w=900&auto=format&fit=crop&q=60">
             <div class="overlay">Urban Culture Terroir</div>
         </div>
+
         <div class="image-container">
-            <img src="https://images.unsplash.com/photo-1680699641125-5aeac45fe296?w=900&auto=format&fit=crop&q=60">
-            <div class="overlay">Cathedrals of Connection</div>
+            <img src="https://images.unsplash.com/photo-1759802339352-3ae7fedc2c8e?q=80&w=1673&auto=format&fit=crop">
+            <div class="overlay">Urban Themes</div>
         </div>
+
+        <div class="image-container">
+            <img src="https://images.unsplash.com/photo-1657104709136-5743a9fba980?w=900&auto=format&fit=crop&q=60">
+            <div class="overlay">Spaces of Connection</div>
+        </div>
+
+        <div class="image-container">
+            <img src="https://images.unsplash.com/photo-1471347219181-ea568f4ef9a3?w=900&auto=format&fit=crop&q=60">
+            <div class="overlay">Subcultural Infrastructure</div>
+        </div>
+
     </div>
 </section>
 
-<!-- CONTACT -->
 <section class="section">
     <h2>Contact</h2>
     <p>Email: your@email.com</p>
-
-    <div class="map">
-        <svg viewBox="0 0 600 300">
-            <circle cx="500" cy="150" r="6" onclick="showCity('seoul')"/>
-            <circle cx="200" cy="120" r="6" onclick="showCity('newyork')"/>
-            <circle cx="350" cy="140" r="6" onclick="showCity('istanbul')"/>
-            <circle cx="180" cy="180" r="6" onclick="showCity('mexico')"/>
-            <circle cx="360" cy="200" r="6" onclick="showCity('lagos')"/>
-        </svg>
-    </div>
-
 </section>
 
 <div class="footer">
@@ -251,27 +215,18 @@ circle:hover {
 </div>
 
 <script>
-const heroImages = [
-'https://images.unsplash.com/photo-1471347219181-ea568f4ef9a3?w=1600',
-'https://images.unsplash.com/photo-1680699641125-5aeac45fe296?w=1600',
-'https://images.unsplash.com/photo-1590157867535-b8435e08a93f?w=1600'
-];
+function showConcept(type){
+    const text = {
+        divisions: "Social and cultural divisions built into the physical landscape, becoming an entrenched and naturalized part of urban life.",
+        paradox: "Cities are built on divisions, yet those same divisions generate creativity and cultural innovation.",
+        waystations: "Urban sites of experimentation where identities, styles, and creative practices are explored before stabilizing.",
+        improv: "Open-ended collective creation where culture emerges through interaction and improvisation.",
+        infra: "Networks of venues, spaces, and intermediaries that sustain subcultural scenes.",
+        terroir: "Locally embedded practices and meanings that give cultural production its distinctive character.",
+        assemblage: "A way of analyzing cities as dynamic processes of connection, transformation, and recombination."
+    };
 
-let i = 0;
-setInterval(() => {
-    document.getElementById('hero').style.backgroundImage =
-    `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${heroImages[i]})`;
-    i = (i + 1) % heroImages.length;
-}, 4000);
-
-function showCity(city){
-    document.getElementById("cityDisplay").innerHTML =
-    "<strong>" + city + "</strong>: A key site of global urban culture.";
-}
-
-function showConcept(concept){
-    document.getElementById("conceptDisplay").innerHTML =
-    "<strong>" + concept + "</strong>: A core idea in The Urban Way.";
+    document.getElementById("conceptDisplay").innerHTML = text[type];
 }
 </script>
 
