@@ -19,7 +19,7 @@ body {
 /* HERO */
 .hero {
     height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('https://images.unsplash.com/photo-1508057198894-247b23fe5ade?w=1600&auto=format&fit=crop&q=60') center/cover no-repeat;
+    background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('PASTE_YOUR_MAIN_IMAGE') center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -42,7 +42,6 @@ body {
 .author-line {
     font-size: 0.95rem;
     margin-top: 10px;
-    opacity: 0.9;
 }
 
 /* SECTION */
@@ -54,7 +53,6 @@ body {
 
 h2 {
     font-family: 'Playfair Display', serif;
-    font-size: 2rem;
 }
 
 /* BUTTONS */
@@ -80,7 +78,7 @@ h2 {
 }
 
 .city-display {
-    margin-top: 25px;
+    margin-top: 20px;
     border-top: 1px solid #ddd;
     padding-top: 20px;
     min-height: 120px;
@@ -90,20 +88,17 @@ h2 {
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 14px;
-    margin-top: 20px;
+    gap: 12px;
 }
 
 .image-container {
     position: relative;
-    overflow: hidden;
 }
 
 .image-container img {
     width: 100%;
     height: 260px;
     object-fit: cover;
-    display: block;
 }
 
 .overlay {
@@ -112,7 +107,7 @@ h2 {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0,0,0,0.65);
+    background: rgba(0,0,0,0.6);
     color: white;
     display: flex;
     align-items: center;
@@ -120,9 +115,7 @@ h2 {
     text-align: center;
     opacity: 0;
     transition: opacity 0.3s ease;
-    padding: 15px;
-    font-size: 1.1rem;
-    letter-spacing: 0.5px;
+    padding: 10px;
 }
 
 .image-container:hover .overlay {
@@ -135,11 +128,6 @@ h2 {
     margin-top: 40px;
 }
 
-svg {
-    width: 100%;
-    max-width: 600px;
-}
-
 svg circle {
     fill: #111;
     cursor: pointer;
@@ -150,7 +138,6 @@ svg circle:hover {
     transform: scale(1.3);
 }
 
-/* FOOTER */
 .footer {
     background: #111;
     color: white;
@@ -176,7 +163,7 @@ svg circle:hover {
 <section class="section">
     <h2>About the Book</h2>
     <p>Cities are not just places—they are assemblages.</p>
-    <p><em>The Urban Way</em> explores how culture moves through urban life: through food, music, migration, and neighborhood change.</p>
+    <p><em>The Urban Way</em> explores how culture moves through urban life.</p>
     <p><strong>Coming 2027</strong></p>
 </section>
 
@@ -206,27 +193,27 @@ svg circle:hover {
 
     <div class="grid">
         <div class="image-container">
-            <img src="https://images.unsplash.com/photo-1471347219181-ea568f4ef9a3?w=900&auto=format&fit=crop&q=60">
+            <img src="https://images.unsplash.com/photo-1471347219181-ea568f4ef9a3">
             <div class="overlay">Subcultural Infrastructure</div>
         </div>
         <div class="image-container">
-            <img src="https://images.unsplash.com/photo-1680699641125-5aeac45fe296?w=900&auto=format&fit=crop&q=60">
+            <img src="https://images.unsplash.com/photo-1680699641125-5aeac45fe296">
             <div class="overlay">Minor Spaces</div>
         </div>
         <div class="image-container">
-            <img src="https://images.unsplash.com/photo-1590157867535-b8435e08a93f?w=900&auto=format&fit=crop&q=60">
+            <img src="https://images.unsplash.com/photo-1590157867535-b8435e08a93f">
             <div class="overlay">Informal to Formal Culture</div>
         </div>
         <div class="image-container">
-            <img src="https://images.unsplash.com/photo-1508057198894-247b23fe5ade?w=900&auto=format&fit=crop&q=60">
+            <img src="https://images.unsplash.com/photo-1471347219181-ea568f4ef9a3">
             <div class="overlay">Cultural Hybrids</div>
         </div>
         <div class="image-container">
-            <img src="https://images.unsplash.com/photo-1524499982521-1ffd58dd89ea?w=900&auto=format&fit=crop&q=60">
+            <img src="https://images.unsplash.com/photo-1508057198894-247b23fe5ade">
             <div class="overlay">Urban Culture Terroir</div>
         </div>
         <div class="image-container">
-            <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?w=900&auto=format&fit=crop&q=60">
+            <img src="https://images.unsplash.com/photo-1524499982521-1ffd58dd89ea">
             <div class="overlay">Cathedrals of Connection</div>
         </div>
     </div>
@@ -237,11 +224,12 @@ svg circle:hover {
     <p>Email: your@email.com</p>
 </section>
 
+<!-- MAP SECTION -->
 <section class="section">
     <h2>Global Urban Pathways</h2>
 
     <div class="map-container">
-        <svg viewBox="0 0 600 300">
+        <svg width="600" height="300">
             <circle cx="500" cy="150" r="6" onclick="showCity('seoul')"/>
             <circle cx="200" cy="120" r="6" onclick="showCity('newyork')"/>
             <circle cx="350" cy="140" r="6" onclick="showCity('istanbul')"/>
@@ -267,16 +255,16 @@ svg circle:hover {
 <script>
 function showCity(city) {
     const content = {
-        seoul: "<strong>Seoul</strong><br>In Seoul, global culture circulates through media, food, and rapidly transforming neighborhoods.",
-        newyork: "<strong>New York</strong><br>Migration continually reshapes urban life, producing layered identities.",
-        istanbul: "<strong>Istanbul</strong><br>A historic crossroads where cultural exchange is foundational.",
-        mexicocity: "<strong>Mexico City</strong><br>Dense street life produces improvisational cultural forms.",
-        lagos: "<strong>Lagos</strong><br>Rapid growth and informal systems generate new urban cultures.",
-        london: "<strong>London</strong><br>Global finance meets everyday cultural hybridity.",
-        mumbai: "<strong>Mumbai</strong><br>Scale and informality redefine urban experience.",
-        tokyo: "<strong>Tokyo</strong><br>Precision and subculture coexist.",
-        paris: "<strong>Paris</strong><br>Tradition intersects with global flows.",
-        saoPaulo: "<strong>São Paulo</strong><br>Vast inequality produces dynamic cultural expression."
+        seoul: "Seoul: A hyper-modern node of cultural circulation.",
+        newyork: "New York: Migration continually reshapes urban life.",
+        istanbul: "Istanbul: A historic crossroads of exchange.",
+        mexicocity: "Mexico City: Dense, improvisational cultural life.",
+        lagos: "Lagos: Rapid growth and dynamic informal systems.",
+        london: "London: Global finance meets cultural hybridity.",
+        mumbai: "Mumbai: Informality and scale redefine urban life.",
+        tokyo: "Tokyo: Precision and subculture coexist.",
+        paris: "Paris: Tradition and global culture intersect.",
+        saoPaulo: "São Paulo: Vast, unequal, and culturally generative."
     };
 
     document.getElementById("cityDisplay").innerHTML = content[city];
