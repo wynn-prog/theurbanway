@@ -17,7 +17,7 @@ body {
 
 /* HERO */
 .hero {
-    height: 90vh;
+    height: 85vh;
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
     url('https://images.unsplash.com/photo-1508057198894-247b23fe5ade?w=1600&auto=format&fit=crop&q=60') center/cover no-repeat;
     display: flex;
@@ -25,6 +25,7 @@ body {
     justify-content: center;
     text-align: center;
     color: white;
+    padding: 20px;
 }
 
 .hero h1 {
@@ -40,16 +41,17 @@ body {
 
 /* SECTIONS */
 .section {
-    max-width: 800px;
+    max-width: 700px;
     margin: auto;
-    padding: 60px 20px;
+    padding: 80px 20px;
 }
 
 h2 {
     font-family: 'Playfair Display', serif;
+    margin-bottom: 20px;
 }
 
-/* CITY BUTTONS */
+/* BUTTONS */
 .cities-list {
     display: flex;
     flex-wrap: wrap;
@@ -60,49 +62,41 @@ h2 {
 .city-btn {
     padding: 8px 14px;
     border: 1px solid black;
-    cursor: pointer;
     transition: 0.2s;
 }
 
 .city-btn:hover {
     background: black;
     color: white;
+    transform: translateY(-2px);
 }
 
-/* GRID */
-.grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-}
-
-.image-box {
+/* IMAGES (NEW LAYOUT) */
+.image-block {
+    margin-bottom: 40px;
     position: relative;
 }
 
-.image-box img {
+.image-block img {
     width: 100%;
     height: auto;
     display: block;
 }
 
-/* OVERLAY */
 .overlay {
     position: absolute;
-    top: 0;
+    bottom: 0;
     left: 0;
     right: 0;
-    bottom: 0;
     background: rgba(0,0,0,0.6);
     color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: 15px;
+    font-size: 1rem;
     opacity: 0;
     transition: 0.3s;
 }
 
-.image-box:hover .overlay {
+.image-block:hover .overlay {
     opacity: 1;
 }
 
@@ -146,29 +140,26 @@ h2 {
 <section class="section">
     <h2>Scenes from the Urban Way</h2>
 
-    <div class="grid">
-
-        <div class="image-box">
-            <img src="https://images.unsplash.com/photo-1471347219181-ea568f4ef9a3?w=900&auto=format&fit=crop&q=60">
-            <div class="overlay">Subcultural Infrastructure</div>
-        </div>
-
-        <div class="image-box">
-            <img src="https://images.unsplash.com/photo-1680699641125-5aeac45fe296?w=900&auto=format&fit=crop&q=60">
-            <div class="overlay">Minor Spaces</div>
-        </div>
-
-        <div class="image-box">
-            <img src="https://images.unsplash.com/photo-1590157867535-b8435e08a93f?w=900&auto=format&fit=crop&q=60">
-            <div class="overlay">Informal to Formal Culture</div>
-        </div>
-
-        <div class="image-box">
-            <img src="https://images.unsplash.com/photo-1471347219181-ea568f4ef9a3?w=900&auto=format&fit=crop&q=60">
-            <div class="overlay">Cultural Hybrids</div>
-        </div>
-
+    <div class="image-block">
+        <img src="https://images.unsplash.com/photo-1471347219181-ea568f4ef9a3?w=900&auto=format&fit=crop&q=60">
+        <div class="overlay">Subcultural Infrastructure</div>
     </div>
+
+    <div class="image-block">
+        <img src="https://images.unsplash.com/photo-1680699641125-5aeac45fe296?w=900&auto=format&fit=crop&q=60">
+        <div class="overlay">Minor Spaces</div>
+    </div>
+
+    <div class="image-block">
+        <img src="https://images.unsplash.com/photo-1590157867535-b8435e08a93f?w=900&auto=format&fit=crop&q=60">
+        <div class="overlay">Informal to Formal Culture</div>
+    </div>
+
+    <div class="image-block">
+        <img src="https://images.unsplash.com/photo-1471347219181-ea568f4ef9a3?w=900&auto=format&fit=crop&q=60">
+        <div class="overlay">Cultural Hybrids</div>
+    </div>
+
 </section>
 
 <section class="section">
